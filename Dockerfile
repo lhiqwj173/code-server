@@ -7,7 +7,7 @@ USER root
 # ENV https_proxy "https://ip:port"
 # ENV no_proxy="localhost,127.0.0.1"
 
-RUN apt -y update && apt -y install build-essential gdb gcc wget mercurial
+RUN apt -y update && apt -y install build-essential gdb gcc wget mercurial curl git screen unzip vim && apt-get clean
 
 RUN curl -sfLO https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
  && /bin/bash Miniconda3-latest-Linux-x86_64.sh -b -p /root/miniconda \
@@ -41,4 +41,4 @@ COPY settings.json /home/coder/.local/share/code-server/User/settings.json
 COPY keybindings.json /home/coder/.local/share/code-server/User/keybindings.json
 
 ## overwrite entrypoint.sh
-COPY entrypoint.sh /usr/bin/entrypoint.sh
+## COPY entrypoint.sh /usr/bin/entrypoint.sh
