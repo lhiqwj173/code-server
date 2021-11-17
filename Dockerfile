@@ -7,7 +7,6 @@ USER root
 # ENV https_proxy "https://ip:port"
 # ENV no_proxy="localhost,127.0.0.1"
 
-
 RUN apt -y update && apt -y install build-essential gdb gcc wget mercurial
 
 RUN curl -sfLO https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
