@@ -20,6 +20,7 @@ RUN code-server \
 	--user-data-dir=/home/coder/.local/share/code-server \
 	--install-extension golang.go \
 	--install-extension ms-python.python \
+	--install-extension ms-toolsai.jupyter \
 	--install-extension formulahendry.code-runner \
 	--install-extension eamodio.gitlens \
 	--install-extension coenraads.bracket-pair-colorizer \
