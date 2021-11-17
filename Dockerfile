@@ -10,6 +10,11 @@ USER root
 
 RUN apt -y update && apt -y install build-essential gdb gcc wget mercurial
 
+RUN curl -sfLO https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+ && /bin/bash Miniconda3-latest-Linux-x86_64.sh -b -p /root/miniconda \
+ && PATH="/root/miniconda/bin:$PATH" \
+ && conda install -c anaconda jupyter
+
 RUN wget https://github.com/microsoft/vscode-cpptools/releases/download/1.5.1/cpptools-linux.vsix
 RUN code-server \
 	--user-data-dir=/home/coder/.local/share/code-server \
